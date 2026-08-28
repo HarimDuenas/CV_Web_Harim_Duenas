@@ -25,7 +25,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-6 px-6 py-4 sm:px-10">
         <Link
           to="/"
-          className="font-display text-lg font-semibold tracking-tight text-cream-50 transition-colors hover:text-gold-400"
+          className="focus-ring rounded-sm font-display text-lg font-semibold tracking-tight text-cream-50 transition-colors hover:text-gold-400"
         >
           HD
         </Link>
@@ -40,7 +40,7 @@ export function SiteHeader() {
                   // since every path starts with a slash.
                   end={route.path === '/'}
                   className={({ isActive }) =>
-                    `rounded-full px-3 py-1.5 text-sm transition-colors ${
+                    `focus-ring rounded-full px-3 py-1.5 text-sm transition-colors ${
                       isActive
                         ? 'bg-gold-500/10 text-gold-300'
                         : 'text-cream-400 hover:text-cream-50'
@@ -60,7 +60,7 @@ export function SiteHeader() {
           aria-label="Open the site index"
           aria-expanded={indexOpen}
           aria-controls="site-index"
-          className="-mr-2 rounded-full p-2 text-cream-400 transition-colors hover:text-cream-50 md:hidden"
+          className="focus-ring -mr-2 rounded-full p-2 text-cream-400 transition-colors hover:text-cream-50 md:hidden"
         >
           <Icon name="menu" className="h-5 w-5" />
         </button>

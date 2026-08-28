@@ -58,3 +58,20 @@
 @utility bg-grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+/*
+ * Keyboard-only focus ring, in one place so every interactive element in the
+ * site draws the same one.
+ *
+ * `focus-visible` rather than `focus`, so a mouse click never paints it — that
+ * is the reason a lot of sites end up removing focus styles altogether and
+ * leaving keyboard users with nothing. `outline` rather than a shadow ring
+ * because an outline follows whatever border radius the element already has,
+ * without having to be told what shape it is.
+ */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-gold-400);
+    outline-offset: 3px;
+  }
+}

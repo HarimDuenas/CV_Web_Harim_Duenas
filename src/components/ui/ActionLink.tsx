@@ -30,7 +30,7 @@ export function ActionLink({
   external = false,
   withArrow = false,
 }: ActionLinkProps) {
-  const className = `group inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm transition-colors duration-200 ${styles[variant]}`
+  const className = `focus-ring group inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm transition-colors duration-200 ${styles[variant]}`
 
   const content = (
     <>

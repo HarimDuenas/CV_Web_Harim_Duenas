@@ -26,6 +26,7 @@ interface SiteIndexPanelProps {
  * itself against that one bar instead of against the viewport.
  */
 export function SiteIndexPanel({ open, onClose }: SiteIndexPanelProps) {
+  const panelRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const { pathname } = useLocation()
 
@@ -40,7 +41,30 @@ export function SiteIndexPanel({ open, onClose }: SiteIndexPanelProps) {
     if (!open) return
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose()
+      if (event.key === 'Escape') {
+        onClose()
+        return
+      }
+
+      if (event.key !== 'Tab') return
+
+      // The page behind the panel is still rendered and still focusable, so
+      // Tab would walk straight out of an open dialog and leave the reader
+      // driving something they cannot see. Wrapping at both ends keeps the
+      // keyboard inside until the panel is closed.
+      const focusable = panelRef.current?.querySelectorAll<HTMLElement>('a[href], button')
+      if (!focusable || focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
     }
 
     // The page behind the panel must not scroll under the finger while the
@@ -81,6 +105,7 @@ export function SiteIndexPanel({ open, onClose }: SiteIndexPanelProps) {
       />
 
       <div
+        ref={panelRef}
         id="site-index"
         role="dialog"
         aria-modal="true"
@@ -96,7 +121,7 @@ export function SiteIndexPanel({ open, onClose }: SiteIndexPanelProps) {
             type="button"
             onClick={onClose}
             aria-label="Close the site index"
-            className="-mr-2 rounded-full p-2 text-cream-400 transition-colors hover:text-cream-50"
+            className="focus-ring -mr-2 rounded-full p-2 text-cream-400 transition-colors hover:text-cream-50"
           >
             <Icon name="close" className="h-5 w-5" />
           </button>
@@ -113,7 +138,7 @@ export function SiteIndexPanel({ open, onClose }: SiteIndexPanelProps) {
                   end={route.path === '/'}
                   onClick={onClose}
                   className={({ isActive }) =>
-                    `flex gap-4 border-l-2 py-3.5 pl-4 transition-colors ${
+                    `focus-ring flex gap-4 border-l-2 py-3.5 pl-4 transition-colors ${
                       isActive ? 'border-gold-500' : 'border-transparent'
                     }`
                   }
