@@ -7,7 +7,7 @@ export * from './types'
 
 export { contactMethods } from './contact'
 export { education, languages } from './education'
-export { navSections } from './navigation'
+export { navRoutes } from './navigation'
 export { highlightedRole, profile } from './profile'
 export { projects, sideProjects } from './projects'
 export { skillGroups } from './skills'
