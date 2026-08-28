@@ -1,6 +1,14 @@
 import type { ReactNode } from 'react'
 
-export type IconName = 'location' | 'phone' | 'email' | 'github' | 'website' | 'arrow'
+export type IconName =
+  | 'location'
+  | 'phone'
+  | 'email'
+  | 'github'
+  | 'website'
+  | 'arrow'
+  | 'menu'
+  | 'close'
 
 interface IconProps {
   name: IconName
@@ -10,7 +18,7 @@ interface IconProps {
 /**
  * The handful of icons the site needs, inlined rather than pulled from a
  * library. An icon package would ship a runtime and a tree-shaking problem for
- * six glyphs; these cost nothing and render at any size.
+ * eight glyphs; these cost nothing and render at any size.
  *
  * All but GitHub are stroked at 1.5 to sit alongside the text weight without
  * shouting. GitHub is the official mark, which is a filled shape.
@@ -38,6 +46,10 @@ const glyphs: Record<IconName, ReactNode> = {
     </>
   ),
   arrow: <path d="M5 12h13m-5.5-5.5L18 12l-5.5 5.5" />,
+  // Deliberately uneven rules rather than the usual three equal bars: it reads
+  // as a table of contents, which is what the panel behind it actually is.
+  menu: <path d="M4 8h16M4 16h9" />,
+  close: <path d="m6 6 12 12M18 6 6 18" />,
   github: (
     <path
       fill="currentColor"
