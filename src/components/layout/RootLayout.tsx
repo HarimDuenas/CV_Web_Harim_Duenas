@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router'
 import { BackgroundDecor } from './BackgroundDecor'
+import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 
 /**
@@ -15,6 +16,7 @@ export function RootLayout() {
       <main id="main" className="flex-1">
         <Outlet />
       </main>
+      <SiteFooter />
     </div>
   )
 }
