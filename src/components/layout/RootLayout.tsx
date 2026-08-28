@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router'
+import { BackgroundDecor } from './BackgroundDecor'
 import { SiteHeader } from './SiteHeader'
 
 /**
@@ -9,6 +10,7 @@ import { SiteHeader } from './SiteHeader'
 export function RootLayout() {
   return (
     <div className="flex min-h-screen flex-col">
+      <BackgroundDecor />
       <SiteHeader />
       <main id="main" className="flex-1">
         <Outlet />
