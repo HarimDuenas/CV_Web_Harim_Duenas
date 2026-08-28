@@ -83,8 +83,10 @@ export interface SoftSkill {
   evidence: string
 }
 
-/** An entry in the in-page navigation. `id` must match a section's DOM id. */
-export interface NavSection {
-  id: string
+/** An entry in the site navigation. `path` must match a declared route. */
+export interface NavRoute {
+  path: string
   label: string
+  /** One line describing the page, reused as its intro and in metadata. */
+  description: string
 }
