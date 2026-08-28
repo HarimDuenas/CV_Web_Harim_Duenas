@@ -1,0 +1,28 @@
+{
+  "name": "cv-web-harim-duenas",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Personal CV website of Harim Jesus Enrique Duenas Davila",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.4.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "oxlint": "^1.13.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.3"
+  }
+}
