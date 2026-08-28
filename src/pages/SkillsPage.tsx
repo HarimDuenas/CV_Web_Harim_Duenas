@@ -1,6 +1,7 @@
 import { navRoutes, skillGroups } from '../data'
 import { PageIntro } from '../components/layout/PageIntro'
 import { PageShell } from '../components/layout/PageShell'
+import { PageTitle } from '../components/layout/PageTitle'
 import { Section } from '../components/layout/Section'
 import { Tag } from '../components/ui/Tag'
 
@@ -9,6 +10,9 @@ const route = navRoutes.find((entry) => entry.path === '/skills')!
 export function SkillsPage() {
   return (
     <PageShell>
+      <PageTitle page="Skills" />
+
+
       <PageIntro eyebrow="Toolkit" title="Skills" description={route.description} />
 
       <Section id="technical" index="01" title="Technical">

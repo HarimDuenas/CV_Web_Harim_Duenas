@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router'
 import { BackgroundDecor } from './BackgroundDecor'
+import { ScrollReset } from './ScrollReset'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 
@@ -11,6 +12,7 @@ import { SiteHeader } from './SiteHeader'
 export function RootLayout() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollReset />
       <BackgroundDecor />
       <SiteHeader />
       <main id="main" className="flex-1">

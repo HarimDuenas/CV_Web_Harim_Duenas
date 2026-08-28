@@ -1,6 +1,7 @@
 import { navRoutes, projects, sideProjects } from '../data'
 import { PageIntro } from '../components/layout/PageIntro'
 import { PageShell } from '../components/layout/PageShell'
+import { PageTitle } from '../components/layout/PageTitle'
 import { Section } from '../components/layout/Section'
 import { ProjectCard } from '../components/projects/ProjectCard'
 
@@ -9,6 +10,9 @@ const route = navRoutes.find((entry) => entry.path === '/projects')!
 export function ProjectsPage() {
   return (
     <PageShell>
+      <PageTitle page="Projects" />
+
+
       <PageIntro eyebrow="Work" title="Projects" description={route.description} />
 
       <Section id="featured" index="01" title="Featured">

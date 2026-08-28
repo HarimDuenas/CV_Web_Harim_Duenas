@@ -1,6 +1,7 @@
 import { contactMethods, navRoutes } from '../data'
 import { PageIntro } from '../components/layout/PageIntro'
 import { PageShell } from '../components/layout/PageShell'
+import { PageTitle } from '../components/layout/PageTitle'
 import { Section } from '../components/layout/Section'
 import { ActionLink } from '../components/ui/ActionLink'
 import { Icon, type IconName } from '../components/ui/Icon'
@@ -20,6 +21,9 @@ const iconFor: Record<string, IconName> = {
 export function ContactPage() {
   return (
     <PageShell>
+      <PageTitle page="Contact" />
+
+
       <PageIntro eyebrow="Say hello" title="Contact" description={route.description} />
 
       <Section id="channels" index="01" title="Get in touch">
