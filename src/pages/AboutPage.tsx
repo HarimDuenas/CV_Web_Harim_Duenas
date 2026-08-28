@@ -1,6 +1,7 @@
 import { education, languages, navRoutes, profile, softSkills } from '../data'
 import { PageIntro } from '../components/layout/PageIntro'
 import { PageShell } from '../components/layout/PageShell'
+import { PageTitle } from '../components/layout/PageTitle'
 import { Section } from '../components/layout/Section'
 
 const route = navRoutes.find((entry) => entry.path === '/about')!
@@ -8,6 +9,9 @@ const route = navRoutes.find((entry) => entry.path === '/about')!
 export function AboutPage() {
   return (
     <PageShell>
+      <PageTitle page="About" />
+
+
       <PageIntro eyebrow="Background" title="About" description={route.description} />
 
       <Section id="profile" index="01" title="Profile">

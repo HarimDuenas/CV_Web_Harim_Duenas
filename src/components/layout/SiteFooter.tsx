@@ -23,7 +23,7 @@ export function SiteFooter() {
               href={github.href}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-5 inline-flex items-center gap-2 text-sm text-cream-400 transition-colors hover:text-gold-400"
+              className="focus-ring mt-5 inline-flex items-center gap-2 rounded-sm text-sm text-cream-400 transition-colors hover:text-gold-400"
             >
               <Icon name="github" className="h-4 w-4" />
               {github.display}
@@ -37,7 +37,7 @@ export function SiteFooter() {
               <li key={route.path}>
                 <Link
                   to={route.path}
-                  className="text-sm text-cream-400 transition-colors hover:text-cream-50"
+                  className="focus-ring rounded-sm text-sm text-cream-400 transition-colors hover:text-cream-50"
                 >
                   {route.label}
                 </Link>

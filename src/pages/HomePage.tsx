@@ -1,6 +1,7 @@
 import { projects } from '../data'
 import { Hero } from '../components/home/Hero'
 import { PageShell } from '../components/layout/PageShell'
+import { PageTitle } from '../components/layout/PageTitle'
 import { Section } from '../components/layout/Section'
 import { ProjectCard } from '../components/projects/ProjectCard'
 import { ActionLink } from '../components/ui/ActionLink'
@@ -15,6 +16,9 @@ export function HomePage() {
 
   return (
     <PageShell>
+      <PageTitle page="Full Stack Developer" />
+
+
       <Hero />
 
       <Section id="featured" index="01" title="Selected work">
